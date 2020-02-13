@@ -3,5 +3,6 @@
 [X]  Implement application to read environment variables and inline flags
 [X]  Implement HTTP Server
 [X]  Add logger to service
+[X]  Convert logger to json format logger
 []  Implement Advanced HTTP Server using mux package
 []  Add docker implementation

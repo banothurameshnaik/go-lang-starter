@@ -34,19 +34,23 @@ func main() {
 	// To read environment variables from .env file, we need to have some external package
 	logLevel, _ := os.LookupEnv("LOG_LEVEL")
 
-	fmt.Println(fmt.Sprintf("Sample go Service || Environment: %s || Port: %s || GO Path: %s || Log Level: %s", *environment, *port, goPath, logLevel))
+	// Advanced logging using logrus package, setting log level
+	loggerLevel, _ := logger.ParseLevel(logLevel)
+	logger.SetLevel(loggerLevel)
+
+	logger.Info(fmt.Sprintf("Sample go Service || Environment: %s || Port: %s || GO Path: %s || Log Level: %s", *environment, *port, goPath, logLevel))
 
 	// Logging
 	// Simple logging using log go package
 	log.Println(fmt.Sprint("Simple logging looks like this"))
 
-	// Using logrus package
+	// Advanced logging using logrus package
 	logger.Info(fmt.Sprint("Advaced logging looks like this"))
 
 	// HTTP Server
 	http.HandleFunc("/", WelcomeHandler)
 
-	fmt.Println(fmt.Sprintf("Starting the application and listing on port %s", *port))
+	logger.Info(fmt.Sprintf("Starting the application and listing on port %s", *port))
 	http.ListenAndServe(fmt.Sprintf(":%s", *port), nil)
 
 }
