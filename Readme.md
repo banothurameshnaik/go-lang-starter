@@ -33,3 +33,8 @@ Just to understand go-lang by implementing a simple service.
     ```shell
     make start
     ```
+
+### Reference
+
+[Environment variables](https://dev.to/craicoverflow/a-no-nonsense-guide-to-environment-variables-in-go-a2f)
+[HTTP Server](https://yourbasic.org/golang/http-server-example/)
