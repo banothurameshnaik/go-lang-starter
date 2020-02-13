@@ -2,5 +2,6 @@
 [X]  Add Readne.md file & describe about application
 [X]  Implement application to read environment variables and inline flags
 [X]  Implement HTTP Server
-[]  Add logger to service
+[X]  Add logger to service
+[]  Implement Advanced HTTP Server using mux package
 []  Add docker implementation

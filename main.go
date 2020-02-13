@@ -3,9 +3,12 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/joho/godotenv"
+	"log"
 	"net/http"
 	"os"
+
+	"github.com/joho/godotenv"
+	logger "github.com/sirupsen/logrus"
 )
 
 var (
@@ -19,6 +22,9 @@ func init() {
 	if err := godotenv.Load(); err != nil {
 		fmt.Println("No .env file found")
 	}
+
+	// Setting log formatter
+	logger.SetFormatter(&logger.JSONFormatter{})
 }
 
 func main() {
@@ -29,6 +35,13 @@ func main() {
 	logLevel, _ := os.LookupEnv("LOG_LEVEL")
 
 	fmt.Println(fmt.Sprintf("Sample go Service || Environment: %s || Port: %s || GO Path: %s || Log Level: %s", *environment, *port, goPath, logLevel))
+
+	// Logging
+	// Simple logging using log go package
+	log.Println(fmt.Sprint("Simple logging looks like this"))
+
+	// Using logrus package
+	logger.Info(fmt.Sprint("Advaced logging looks like this"))
 
 	// HTTP Server
 	http.HandleFunc("/", WelcomeHandler)
