@@ -1,6 +1,6 @@
 [X]  Sample go service
 [X]  Add Readne.md file & describe about application
-[]  Implement application to read environment variables and inline flags
+[X]  Implement application to read environment variables and inline flags
 []  Implement HTTP Server
 []  Add logger to service
 []  Add docker implementation

@@ -1,6 +1,13 @@
 PROJECT = "go-lang"
 
-.PHONY: dependecies 
+# Need to load environment variables
+
+ifeq ($(MAKECMDGOALS), start)
+-include .env
+endif
+
+# To make sure not having conflicts with files defined the application
+.PHONY: dependecies build start
 
 # Dependecies
 dependecies:
