@@ -1,0 +1,5 @@
+[X]  Sample go service
+[]  Implement application to read environment variables and inline flags
+[]  Implement HTTP Server
+[]  Add logger to service
+[]  Add docker implementation
