@@ -5,4 +5,4 @@
 [X]  Add logger to service
 [X]  Convert logger to json format logger
 [X]  Implement Advanced HTTP Server using mux package
-[]  Add docker implementation
+[X]  Add docker implementation
