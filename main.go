@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	logger "github.com/sirupsen/logrus"
 )
@@ -48,14 +49,11 @@ func main() {
 	logger.Info(fmt.Sprint("Advaced logging looks like this"))
 
 	// HTTP Server
-	http.HandleFunc("/", WelcomeHandler)
+	r := mux.NewRouter()
+	handleRoutes(r)
+	http.Handle("/", r)
 
 	logger.Info(fmt.Sprintf("Starting the application and listing on port %s", *port))
 	http.ListenAndServe(fmt.Sprintf(":%s", *port), nil)
 
-}
-
-// WelcomeHandler Welcome endpoint handler
-func WelcomeHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome to sample go-lang application!!!")
 }

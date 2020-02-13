@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  name = "github.com/gorilla/mux"
+  packages = ["."]
+  revision = "75dcda0896e109a2a22c9315bca3bb21b87b2ba5"
+  version = "v1.7.4"
+
+[[projects]]
   name = "github.com/joho/godotenv"
   packages = ["."]
   revision = "23d116af351c84513e1946b527c88823e476be13"
@@ -28,6 +34,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "34c5f3f58c05cef244dccb509d15b8a423731501a78a8e656f511eb1902e994c"
+  inputs-digest = "a6ae6bb1ad7c1113d9d326f72eca0f320c09d1e558dc5ae100eae4a337567d18"
   solver-name = "gps-cdcl"
   solver-version = 1

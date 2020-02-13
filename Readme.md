@@ -41,3 +41,5 @@ Just to understand go-lang by implementing a simple service.
 [HTTP Server](https://yourbasic.org/golang/http-server-example/)
 
 [Logger](https://github.com/sirupsen/logrus)
+
+[Routing](https://github.com/gorilla/mux#examples)
