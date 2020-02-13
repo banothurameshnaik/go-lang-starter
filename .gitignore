@@ -1,0 +1,9 @@
+# Vendor folder
+vendor/
+
+# Environment variables
+.env
+
+# Application executable file after build
+go-lang
+
