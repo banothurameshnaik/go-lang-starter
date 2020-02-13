@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/joho/godotenv"
+	"net/http"
 	"os"
 )
 
@@ -28,4 +29,16 @@ func main() {
 	logLevel, _ := os.LookupEnv("LOG_LEVEL")
 
 	fmt.Println(fmt.Sprintf("Sample go Service || Environment: %s || Port: %s || GO Path: %s || Log Level: %s", *environment, *port, goPath, logLevel))
+
+	// HTTP Server
+	http.HandleFunc("/", WelcomeHandler)
+
+	fmt.Println(fmt.Sprintf("Starting the application and listing on port %s", *port))
+	http.ListenAndServe(fmt.Sprintf(":%s", *port), nil)
+
+}
+
+// WelcomeHandler Welcome endpoint handler
+func WelcomeHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Welcome to sample go-lang application!!!")
 }
