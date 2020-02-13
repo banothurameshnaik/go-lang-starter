@@ -39,3 +39,5 @@ Just to understand go-lang by implementing a simple service.
 [Environment variables](https://dev.to/craicoverflow/a-no-nonsense-guide-to-environment-variables-in-go-a2f)
 
 [HTTP Server](https://yourbasic.org/golang/http-server-example/)
+
+[Logger](https://github.com/sirupsen/logrus)
