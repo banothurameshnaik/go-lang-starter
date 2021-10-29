@@ -15,11 +15,11 @@ endif
 
 # Dependecies
 dependecies:
-	dep ensure -v
+	go mod vendor
 
 # Build
 build: dependecies
-	CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o $(PROJECT) .
+	go build -o $(PROJECT) .
 
 # Start
 start: build

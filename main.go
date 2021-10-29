@@ -29,6 +29,8 @@ func init() {
 }
 
 func main() {
+	// Parsing flags
+	flag.Parse()
 	// To read evnironment variables, we can use os package, as shown below
 	goPath := os.Getenv("GOPATH")
 
@@ -43,10 +45,10 @@ func main() {
 
 	// Logging
 	// Simple logging using log go package
-	log.Println(fmt.Sprint("Simple logging looks like this"))
+	log.Println("Simple logging looks like this")
 
 	// Advanced logging using logrus package
-	logger.Info(fmt.Sprint("Advaced logging looks like this"))
+	logger.Info("Advaced logging looks like this")
 
 	// HTTP Server
 	r := mux.NewRouter()

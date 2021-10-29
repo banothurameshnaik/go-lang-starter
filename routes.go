@@ -5,6 +5,6 @@ import (
 )
 
 func handleRoutes(router *mux.Router) {
-	router.HandleFunc("/", WelcomeHandler)
-	router.HandleFunc("/healthcheck", HealthCheckHandler)
+	router.HandleFunc("/", WelcomeHandler).Methods("GET")
+	router.HandleFunc("/healthcheck", HealthCheckHandler).Methods("GET")
 }
