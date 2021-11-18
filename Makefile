@@ -21,6 +21,10 @@ dependecies:
 build: dependecies
 	go build -o $(PROJECT) .
 
+# Build for linux
+build-linux: dependecies
+	GODEBUG=x509ignoreCN=0 CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o $(PROJECT) .
+
 # Start
 start: build
 	./${PROJECT} --environment=${ENVIRONMENT} --port=${PORT}
@@ -31,7 +35,7 @@ stop:
 	docker container rm $(PROJECT) || echo "Container $(PROJECT) is alreay removed"
 
 # Running local with docker
-local: build stop
+local: build-linux stop
 	docker build -t ${PROJECT} .
 	docker container run -d -p ${PORT}:${PORT} \
 	-e ENVIRONMENT=${ENVIRONMENT} \
